@@ -15,7 +15,11 @@ app.use("/api/categories", categoryRoutes);
 app.use("/api/products", productRoutes); 
 app.use("/api/customers", customerRoutes); 
 app.use("/api/transactions", transactionRoutes);
- 
+
+app.get("/", (req, res) => {
+    res.status(200).send("Sales API is running!");
+});
+
 const port = process.env.PORT || 3000; 
 app.listen(port, () => { 
   console.log(`Server running on port ${port}`); 
