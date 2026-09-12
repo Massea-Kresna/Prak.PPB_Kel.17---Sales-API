@@ -43,7 +43,7 @@ export const CustomerController = {
  
   async update(req, res) { 
     try { 
-      const { email, phone } = req.body:
+      const { email, phone } = req.body;
 
       if (email && !email.includes('@')){
         return res.status(400).json({ error: "Email tidak valid. Wajib mengandung karakter '@'"});
