@@ -1,7 +1,7 @@
 import { supabase } from "../config/supabaseClient.js"; 
  
 export const CustomerModel = { 
-  async getAll(searchName) { 
+  async getAll(searchName, page, limit) { 
     let query = supabase.from("customers").select("*");
 
     if (searchName) {

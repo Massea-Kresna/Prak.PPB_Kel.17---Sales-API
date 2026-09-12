@@ -6,7 +6,7 @@ export const CustomerController = {
       const { name, page = 1, limit = 10 } = req.query;
       const pageNum = parseInt(page);
       const limitNum = parseInt(limit);
-      const customers = await CustomerModel.getAll(name); 
+      const customers = await CustomerModel.getAll(name, pageNum, limitNum); 
       res.json(customers); 
     } catch (err) { 
       res.status(500).json({ error: err.message }); 
