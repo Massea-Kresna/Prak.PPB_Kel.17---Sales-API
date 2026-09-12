@@ -6,6 +6,8 @@ import customerRoutes from "./routes/customerRoutes.js";
 
 import transactionRoutes from "./routes/transactionRoutes.js";
 
+import reportRoutes from "./routes/reportRoutes.js";
+
 dotenv.config(); 
  
 const app = express(); 
@@ -16,6 +18,8 @@ app.use("/api/products", productRoutes);
 app.use("/api/customers", customerRoutes); 
 
 app.use("/api/transactions", transactionRoutes);
+
+app.use("/api/reports", reportRoutes);
 
 app.get("/", (req, res) => {
     res.status(200).send("Sales API is running!");
