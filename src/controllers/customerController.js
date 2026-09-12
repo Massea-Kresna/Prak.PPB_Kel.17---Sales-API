@@ -31,7 +31,7 @@ export const CustomerController = {
       }
 
       if (phone && !phone.length < 10){
-        return res.status(400).json({ error: "Nomor telepon tidak valid. Minimal 10 karakter"})
+        return res.status(400).json({ error: "Nomor telepon tidak valid. Minimal 10 karakter"});
       }
 
       const customer = await CustomerModel.create(req.body); 
@@ -50,7 +50,7 @@ export const CustomerController = {
       }
 
       if (phone && !phone.length < 10){
-        return res.status(400).json({ error: "Nomor telepon tidak valid. Minimal 10 karakter"})
+        return res.status(400).json({ error: "Nomor telepon tidak valid. Minimal 10 karakter"});
       }
 
       const customer = await CustomerModel.update(req.params.id, req.body); 
