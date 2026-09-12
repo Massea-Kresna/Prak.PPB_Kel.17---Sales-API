@@ -3,7 +3,8 @@ import { CustomerModel } from "../models/customerModel.js";
 export const CustomerController = { 
   async getAll(req, res) { 
     try { 
-      const customers = await CustomerModel.getAll(); 
+      const { name } = req.query;
+      const customers = await CustomerModel.getAll(name); 
       res.json(customers); 
     } catch (err) { 
       res.status(500).json({ error: err.message }); 
