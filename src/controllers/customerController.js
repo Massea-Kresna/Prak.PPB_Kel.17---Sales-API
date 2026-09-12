@@ -30,7 +30,7 @@ export const CustomerController = {
         return res.status(400).json({ error: "Email tidak valid. Wajib mengandung karakter '@'"});
       }
 
-      if (phone && !phone.length < 10){
+      if (phone && phone.length < 10){
         return res.status(400).json({ error: "Nomor telepon tidak valid. Minimal 10 karakter"});
       }
 
@@ -49,7 +49,7 @@ export const CustomerController = {
         return res.status(400).json({ error: "Email tidak valid. Wajib mengandung karakter '@'"});
       }
 
-      if (phone && !phone.length < 10){
+      if (phone && phone.length < 10){
         return res.status(400).json({ error: "Nomor telepon tidak valid. Minimal 10 karakter"});
       }
 
