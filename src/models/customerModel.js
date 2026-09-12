@@ -7,11 +7,17 @@ export const CustomerModel = {
     if (searchName) {
             query = query.ilike("name", `%${searchName}%`);
         }
+    if (page && limit) {
+            const from = (page - 1) * limit;
+            const to = from + limit - 1;
+            
+            query = query.range(from, to);
+        }
 
-        const { data, error } = await query;
-        if (error) throw error;
-        return data;
-    }, 
+    const { data, error } = await query;
+    if (error) throw error;
+    return data;
+  }, 
  
   async getById(id) { 
     const { data, error } = await supabase 
